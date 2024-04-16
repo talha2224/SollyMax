@@ -5,7 +5,8 @@ import LoginPage from '../pages/LoginPage'
 import PublicPage from '../pages/PublicPage'
 import PrivatePage from '../pages/PrivatePage'
 import CreateMoviePage from '../pages/CreateMoviePage'
-
+import CatalogMoviePage from '../pages/CatalogMoviePage'
+import EditMoviesPage from '../pages/EditMoviesPage'
 
 const Routers = () => {
 
@@ -19,6 +20,8 @@ const Routers = () => {
         <Route path='bucket/public' element={<PublicPage/>} />
         <Route path='bucket/private' element={<PrivatePage/>} />
         <Route path='movie/create' element={<CreateMoviePage/>} />
+        <Route path='movie/catalog' element={<CatalogMoviePage/>} />
+        <Route path='movie/edit/:id' element={<EditMoviesPage/>} />
       </Route>
 
     </Routes>

@@ -42,7 +42,7 @@ export const NavData = [
         id:6,
         title:"Movie",
         image:MovieIcon,
-        subLinks:[{title:"Create Movie",route:"/admin/movie/create"},{title:"Catalog",route:""}],
+        subLinks:[{title:"Create Movie",route:"/admin/movie/create"},{title:"Catalog",route:"/admin/movie/catalog"}],
         route:""
     },
     {
