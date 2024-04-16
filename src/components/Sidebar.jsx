@@ -14,11 +14,11 @@ const Sidebar = () => {
   const currentLocation = useLocation().pathname
 
 
-  const handleNavigation = (navigateTo)=>{
-    if(navigateTo){
+  const handleNavigation = (navigateTo) => {
+    if (navigateTo) {
       nav(navigateTo)
     }
-    else{
+    else {
       nav(currentLocation)
     }
   }
@@ -36,7 +36,7 @@ const Sidebar = () => {
             NavData?.map((item, index) => (
               <>
                 <div key={item.title} className='flex justify-between items-center mb-4 mx-2 px-3 py-2 rounded-md hover:bg-[#333333] text-white hover:text-[#FBB101] cursor-pointer'>
-                  <div onClick={()=>handleNavigation(item.route)} className={`flex gap-x-3 items-center`}>
+                  <div onClick={() => handleNavigation(item.route)} className={`flex gap-x-3 items-center`}>
                     <img src={item.image} alt={item.title} className='w-[1.2rem]' />
                     <p className='mb-0'>{item.title}</p>
                   </div>
@@ -52,7 +52,7 @@ const Sidebar = () => {
                 {
                   (item.subLinks.length > 0 && item.title === toogleLinks.key && toogleLinks.show) && (
                     item.subLinks.map((sub) => (
-                      <div onClick={()=>handleNavigation(sub.route)} className='flex gap-x-3 items-center mb-2 text-[#FBB101] cursor-pointer mx-5'>
+                      <div onClick={() => handleNavigation(sub.route)} className='flex gap-x-3 items-center mb-2 text-[#FBB101] cursor-pointer mx-5'>
                         <div className='w-[7px] h-[7px] rounded-full bg-[#FBB101]'></div>
                         <div>{sub.title}</div>
                       </div>
@@ -69,14 +69,14 @@ const Sidebar = () => {
 
       {
         visible && (
-          <div style={{backgroundColor:colors.lightgray}} className='overflow-y-auto lg:hidden block w-[16rem] absolute top-0 left-0 z-50 h-[100%]'>
+          <div style={{ backgroundColor: colors.lightgray }} className='overflow-y-auto lg:hidden block w-[16rem] absolute top-0 left-0 z-50 h-[100%]'>
             <img src={Logo} alt="logo" className='p-5' />
             <div className='mt-3'>
               {
                 NavData?.map((item, index) => (
                   <>
                     <div key={item.title} className='flex justify-between items-center mb-4 mx-2 px-3 py-2 rounded-md hover:bg-[#333333] text-white hover:text-[#FBB101] cursor-pointer'>
-                      <div className={`flex gap-x-3 items-center`}>
+                      <div onClick={() => handleNavigation(item.route)} className={`flex gap-x-3 items-center`}>
                         <img src={item.image} alt={item.title} className='w-[1.2rem]' />
                         <p className='mb-0'>{item.title}</p>
                       </div>
@@ -92,7 +92,7 @@ const Sidebar = () => {
                     {
                       (item.subLinks.length > 0 && item.title === toogleLinks.key && toogleLinks.show) && (
                         item.subLinks.map((sub) => (
-                          <div className='flex gap-x-3 items-center mb-2 text-[#FBB101] cursor-pointer mx-5'>
+                          <div onClick={() => handleNavigation(sub.route)} className='flex gap-x-3 items-center mb-2 text-[#FBB101] cursor-pointer mx-5'>
                             <div className='w-[7px] h-[7px] rounded-full bg-[#FBB101]'></div>
                             <div>{sub.title}</div>
                           </div>
