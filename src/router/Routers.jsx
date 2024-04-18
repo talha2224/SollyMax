@@ -9,6 +9,10 @@ import CatalogMoviePage from '../pages/CatalogMoviePage'
 import EditMoviesPage from '../pages/EditMoviesPage'
 import PaymentIntegrationPage from '../pages/PaymentIntegrationPage'
 import EditPaymentPage from '../pages/EditPaymentPage'
+import UserListPage from '../pages/UserListPage'
+import UserSessionPage from '../pages/UserSessionPage'
+import PaidUserPage from '../pages/PaidUserPage'
+
 
 const Routers = () => {
 
@@ -26,6 +30,9 @@ const Routers = () => {
         <Route path='movie/edit/:id' element={<EditMoviesPage/>} />
         <Route path='payment/integration' element={<PaymentIntegrationPage/>} />
         <Route path='payment/integration/edit' element={<EditPaymentPage/>} />
+        <Route path='user/list' element={<UserListPage/>} />
+        <Route path='user/session' element={<UserSessionPage/>} />
+        <Route path='user/paid' element={<PaidUserPage/>} />
 
 
       </Route>

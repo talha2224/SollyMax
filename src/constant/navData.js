@@ -64,22 +64,23 @@ export const NavData = [
         title:"User list",
         image:UserIcon,
         subLinks:[],
-        route:""
+        route:"/admin/user/list"
     },
     {
         id:10,
         title:"List of paid users",
         image:PaidIcon,
         subLinks:[],
-        route:""
+        route:"/admin/user/paid"
     },
-    // {
-    //     id:11,
-    //     title:"User session",
-    //     image:"",
-    //     subLinks:[],
-    //     route:""
-    // },
+    {
+        id:11,
+        title:"User session",
+        image:PaidIcon,
+        subLinks:[],
+        route:""
+        // /admin/user/session
+    },
     {
         id:10,
         title:"User group",

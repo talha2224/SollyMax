@@ -29,7 +29,7 @@ const Sidebar = () => {
     <>
 
 
-      <div className='overflow-y-auto lg:block hidden w-[16rem]'>
+      <div className='overflow-y-auto lg:block hidden min-w-[16rem]'>
         <img src={Logo} alt="logo" className='p-5' />
         <div className='mt-3'>
           {
@@ -69,7 +69,7 @@ const Sidebar = () => {
 
       {
         visible && (
-          <div style={{ backgroundColor: colors.lightgray }} className='overflow-y-auto lg:hidden block w-[16rem] absolute top-0 left-0 z-50 h-[100%]'>
+          <div style={{ backgroundColor: colors.lightgray }} className='overflow-y-auto lg:hidden block min-w-[16rem] absolute top-0 left-0 z-50 h-[100%]'>
             <img src={Logo} alt="logo" className='p-5' />
             <div className='mt-3'>
               {
