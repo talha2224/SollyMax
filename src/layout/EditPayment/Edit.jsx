@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button'
 import ProfileImage from '../../assets/profile.png'
-import Logo from '../../assets/logo.png'
-import MovieBg from '../../assets/movieBg.jpg'
-import PayIcon from '../../assets/pay.png'
-
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useDispatch } from 'react-redux'
 import { toogle } from '../../store/sidebar.slice'
-import { useNavigate } from 'react-router-dom'
 
 const Edit = () => {
     const [toogleBtn, settoogleBtn] = useState("Monthly")
+    const disptach = useDispatch()
     return (
         <div className='flex flex-col h-[100%] overflow-y-auto'>
 
