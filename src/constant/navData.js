@@ -50,7 +50,7 @@ export const NavData = [
         title:"Payment Integration",
         image:CardIcon,
         subLinks:[],
-        route:""
+        route:"/admin/payment/integration"
     },
     {
         id:8,
