@@ -12,6 +12,7 @@ import EditPaymentPage from '../pages/EditPaymentPage'
 import UserListPage from '../pages/UserListPage'
 import UserSessionPage from '../pages/UserSessionPage'
 import PaidUserPage from '../pages/PaidUserPage'
+import UserGroupPage from '../pages/UserGroupPage'
 
 
 const Routers = () => {
@@ -33,6 +34,7 @@ const Routers = () => {
         <Route path='user/list' element={<UserListPage/>} />
         <Route path='user/session' element={<UserSessionPage/>} />
         <Route path='user/paid' element={<PaidUserPage/>} />
+        <Route path='user/group' element={<UserGroupPage/>} />
 
 
       </Route>

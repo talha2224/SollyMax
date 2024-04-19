@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import ProfileImage from '../../assets/profile.png'
 import Unlock from '../../assets/unlock.png'
-import Star from '../../assets/star.png'
-import Edit from '../../assets/edit.png'
+import RightArrow from '../../assets/right.png'
 import User from '../../assets/userIcon.png'
 import Trash from '../../assets/trash.png'
 import Button from '../../components/Button'
@@ -11,23 +10,46 @@ import { useDispatch } from 'react-redux'
 import { toogle } from '../../store/sidebar.slice'
 import { FaSearch } from 'react-icons/fa'
 import Notify from '../../components/Notify'
-import { useNavigate } from 'react-router-dom'
 
 const Userlist = () => {
     const disptach = useDispatch()
-    const [movieType, setMovieType] = useState("Action")
     const count = [1, 2, 3, 4, 4, 5, 6, 6, 6766, 7, 67, 7, 65,]
     const [notify, setNotify] = useState(false)
-    const nav = useNavigate()
+    const [location, setLocation] = useState({ show: false, type: "Canada" })
 
     return (
         <div className='flex flex-col h-[100%] overflow-auto relative'>
 
             {/* NAV BAR  BUTTONS AND PROFILE ICON */}
             <div className='flex justify-between items-center'>
-                <p className='text-white font-semibold'>User list <span className='text-[#FBB101]'>(2000 User)</span></p>
+
+                <div className='flex items-center gap-x-4'>
+                    <p className='text-white font-semibold'>User list <span className='text-[#FBB101]'>(2000 User)</span></p>
+                    <div className='hidden md:flex gap-x-3 items-center'>
+                        <p className='text-white'>select location</p>
+                        <div onClick={() => setLocation({ ...location, show: !location.show })} className='flex gap-x-3 items-center px-2 py-1 cursor-pointer bg-[#333333] rounded-md relative '>
+                            <p className='text-white'>{location.type}</p>
+                            <img src={RightArrow} alt="" />
+                            {
+                                location.show && (
+                                    <div className=' absolute top-[3rem] left-0 right-0 w-full bg-[#000000] p-1 overflow-y-auto max-h-[10rem] z-50 rounded-md'>
+                                        <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                        <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                        <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                        <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                        <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                        <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+
+                                    </div>
+
+                                )
+                            }
+                        </div>
+                    </div>
+                </div>
+
                 <div className='flex items-center gap-x-3'>
-                    <div className='hidden sm:flex gap-x-4 items-center w-[16rem] h-[2.3rem] rounded-md border border-[#A3A3A3] px-3'>
+                    <div className='hidden md:flex gap-x-4 items-center w-[16rem] h-[2.3rem] rounded-md border border-[#A3A3A3] px-3'>
                         <FaSearch className='text-[#A3A3A3]' />
                         <input type="text" name="" id="" placeholder='Search for users' className='text-[#A3A3A3] flex-1 outline-none bg-transparent border-none placeholder:text-[#A3A3A3]' />
                     </div>
@@ -40,9 +62,34 @@ const Userlist = () => {
             </div>
 
             {/* RESPONSIVE SEARCH BAR  */}
-            <div className='sm:hidden flex gap-x-4 items-center w-[100%] mt-3 h-[2.3rem] rounded-md border border-[white] text-white px-3'>
-                <FaSearch className='text-white' />
-                <input type="text" name="" id="" placeholder='Search movie & tv series' className='flex-1 outline-none bg-transparent border-none placeholder:text-white' />
+
+            <div className='md:hidden flex justify-between items-center mt-3'>
+                <div className='flex gap-x-4 items-center w-[70%] h-[2.3rem] rounded-md border border-[white] text-white px-3'>
+                    <FaSearch className='text-white' />
+                    <input type="text" name="" id="" placeholder='Search movie & tv series' className='flex-1 outline-none bg-transparent border-none placeholder:text-white' />
+                </div>
+
+                <div className='flex gap-x-3 items-center'>
+                    <p className='text-white sm:block hidden'>select user location</p>
+                    <div onClick={() => setLocation({ ...location, show: !location.show })} className='flex gap-x-3 items-center px-2 py-1 cursor-pointer bg-[#333333] rounded-md relative '>
+                        <p className='text-white'>{location.type}</p>
+                        <img src={RightArrow} alt="" />
+                        {
+                            location.show && (
+                                <div className=' absolute top-[3rem] left-0 right-0 w-full bg-[#000000] p-1 overflow-y-auto max-h-[10rem] z-50 rounded-md'>
+                                    <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                    <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                    <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                    <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                    <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+                                    <p onClick={() => { setLocation({ type: "Canada", show: false }) }} className='text-white cursor-pointer mb-1'>Canada</p>
+
+                                </div>
+                            )
+                        }
+                    </div>
+                </div>
+
             </div>
 
 

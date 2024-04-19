@@ -78,15 +78,15 @@ export const NavData = [
         title:"User session",
         image:PaidIcon,
         subLinks:[],
-        route:""
-        // /admin/user/session
+        route:"/admin/user/session"
+        // 
     },
     {
         id:10,
         title:"User group",
         image:GroupIcon,
         subLinks:[],
-        route:""
+        route:"/admin/user/group"
     },
 
 ]
