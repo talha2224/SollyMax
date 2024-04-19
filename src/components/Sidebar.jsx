@@ -16,7 +16,7 @@ const Sidebar = () => {
   const dispatch = useDispatch()
 
 
-  const handleNavigation = (navigateTo,item) => {
+  const handleNavigation = (navigateTo, item) => {
     if (navigateTo) {
       nav(navigateTo)
       dispatch(toogle())
@@ -39,8 +39,8 @@ const Sidebar = () => {
           {
             NavData?.map((item, index) => (
               <>
-                <div onClick={() => handleNavigation(item.route,item)} key={item.title} className='flex justify-between items-center mb-4 mx-2 px-3 py-2 rounded-md hover:bg-[#333333] text-white hover:text-[#FBB101] cursor-pointer'>
-                  <div  className={`flex gap-x-3 items-center`}>
+                <div onClick={() => handleNavigation(item.route, item)} key={item.title} className='flex justify-between items-center mb-4 mx-2 px-3 py-2 rounded-md hover:bg-[#333333] text-white hover:text-[#FBB101] cursor-pointer'>
+                  <div className={`flex gap-x-3 items-center`}>
                     <img src={item.image} alt={item.title} className='w-[1.2rem]' />
                     <p className='mb-0'>{item.title}</p>
                   </div>
@@ -79,14 +79,14 @@ const Sidebar = () => {
               {
                 NavData?.map((item, index) => (
                   <>
-                    <div key={item.title} className='flex justify-between items-center mb-4 mx-2 px-3 py-2 rounded-md hover:bg-[#333333] text-white hover:text-[#FBB101] cursor-pointer'>
-                      <div onClick={() => handleNavigation(item.route)} className={`flex gap-x-3 items-center`}>
+                    <div onClick={() => handleNavigation(item.route, item)} key={item.title} className='flex justify-between items-center mb-4 mx-2 px-3 py-2 rounded-md hover:bg-[#333333] text-white hover:text-[#FBB101] cursor-pointer'>
+                      <div className={`flex gap-x-3 items-center`}>
                         <img src={item.image} alt={item.title} className='w-[1.2rem]' />
                         <p className='mb-0'>{item.title}</p>
                       </div>
                       {
                         item.subLinks.length > 0 && (
-                          <div onClick={() => { settoogleLinks({ key: item.title, show: !toogleLinks.show }) }}>
+                          <div>
                             <img src={toogleLinks.show && item.title === toogleLinks.key ? DownArrow : RightArrow} alt="" />
                           </div>
                         )
