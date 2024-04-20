@@ -13,6 +13,7 @@ import UserListPage from '../pages/UserListPage'
 import UserSessionPage from '../pages/UserSessionPage'
 import PaidUserPage from '../pages/PaidUserPage'
 import UserGroupPage from '../pages/UserGroupPage'
+import SignInPage from '../pages/SignInPage'
 
 
 const Routers = () => {
@@ -22,6 +23,7 @@ const Routers = () => {
     <Routes>
 
       <Route path='/admin/'>
+        <Route path='signin' element={<SignInPage/>} />
         <Route path='home' element={<HomePage/>} />
         <Route path='login' element={<LoginPage/>} />
         <Route path='bucket/public' element={<PublicPage/>} />
@@ -35,8 +37,6 @@ const Routers = () => {
         <Route path='user/session' element={<UserSessionPage/>} />
         <Route path='user/paid' element={<PaidUserPage/>} />
         <Route path='user/group' element={<UserGroupPage/>} />
-
-
       </Route>
 
     </Routes>

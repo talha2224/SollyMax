@@ -9,9 +9,11 @@ import Movie4 from '../../assets/movie4.jpeg'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useDispatch } from 'react-redux'
 import { toogle } from '../../store/sidebar.slice'
+import { useNavigate } from 'react-router-dom'
 
 const PublicLayout = () => {
     const disptach = useDispatch()
+    const nav = useNavigate()
     const count = [1, 2, 3, 4, 6, 98, 66, 78, 0, 92, 7667, 900, 656, 989, 1, 20009, 3, 4, 6, 98, 66, 78, 0, 92, 7667, 900, 656]
 
     return (
@@ -48,8 +50,8 @@ const PublicLayout = () => {
                             <h1 className='font-bold text-3xl text-center text-white'>Meet Our TV concierge</h1>
                             <p className='font-bold  text-center text-white mt-2 text-sm mb-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores repellat obcaecati harum earum cupiditate mollitia nostrum incidunt.</p>
                             <div className='flex gap-x-3 justify-center items-center'>
-                                <Button title={"Signup"} className={`w-[7rem] h-[2.2rem] rounded-md border-none cursor-pointer font-semibold  bg-[#FBB101] text-white`} />
-                                <Button title={"Login"} className={`w-[7rem] h-[2.2rem] rounded-md border-none cursor-pointer font-semibold bg-[#FBB101] text-white`} />
+                                {/* <Button title={"Signup"} className={`w-[7rem] h-[2.2rem] rounded-md border-none cursor-pointer font-semibold  bg-[#FBB101] text-white`} /> */}
+                                <Button onClick={()=>nav("/admin/signin")} title={"Login"} className={`w-[7rem] h-[2.2rem] rounded-md border-none cursor-pointer font-semibold bg-[#FBB101] text-white`} />
                             </div>
                         </div>
 
