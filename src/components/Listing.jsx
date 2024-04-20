@@ -24,7 +24,7 @@ const Listing = ({ title }) => {
         }
       </div>
 
-      <div className='absolute right-[0rem] z-50 top-0 '>
+      <div className='absolute right-[0rem] z-10 top-0 '>
         <div className="bg-white/30 shadow-md rounded-lg border border-gray-100/20 backdrop-blur-lg w-fit sm:w-[18rem] h-[17rem] p-2 overflow-y-auto">
 
           <div className='flex justify-between items-center w-[100%] font-bold'>
