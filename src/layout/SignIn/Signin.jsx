@@ -14,9 +14,9 @@ const Signin = () => {
                 <h1 className='font-bold text-3xl text-center text-white mt-2'>WELCOME BACK</h1>
                 <p className='font-bold  text-center text-white mt-2 text-sm mb-2'>Enter your details in order to continue.</p>
 
-                <input type="email" name="email" placeholder='Enter Your Email' className='w-[100%] h-[2.2rem] outline-none mb-2 px-3 rounded-md font-bold text-[#333333] placeholder:font-bold placeholder:text-[#333333]'/>
-                <input type="password" name="password" placeholder='Enter Your Password' className='w-[100%] h-[2.2rem] outline-none mb-2 px-3 rounded-md font-bold text-[#333333] placeholder:font-bold placeholder:text-[#333333]'/>
-                <p className='text-right mb-2'>Don't have an account? <span className='font-bold cursor-pointer text-[#33333]'>Register</span></p>
+                <input type="email" name="email" placeholder='Email' className='w-[100%] h-[2.2rem] outline-none mb-2 px-3 rounded-md font-bold text-[#333333] placeholder:font-bold placeholder:text-[#333333]'/>
+                <input type="password" name="password" placeholder='Password' className='w-[100%] h-[2.2rem] outline-none mb-2 px-3 rounded-md font-bold text-[#333333] placeholder:font-bold placeholder:text-[#333333]'/>
+                {/* <p className='text-right mb-2'>Don't have an account? <span className='font-bold cursor-pointer text-[#33333]'>Register</span></p> */}
                 <Button onClick={() => nav("/admin/home")} title={"Login"} className={`w-[100%] h-[2.2rem] rounded-md border-none cursor-pointer font-semibold bg-[#FBB101] text-white`} />
             </div>
         </div>
